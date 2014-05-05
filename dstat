@@ -1579,7 +1579,7 @@ class dstat_tcp(dstat):
         self.vars = ('listen', 'established', 'syn', 'wait', 'close')
         self.type = 'd'
         self.width = 4
-        self.scale = 100
+        self.scale = 1000
         self.open('/proc/net/tcp', '/proc/net/tcp6')
 
     def extract(self):
@@ -1620,8 +1620,8 @@ class dstat_udp(dstat):
         self.nick = ('lis', 'act')
         self.vars = ('listen', 'established')
         self.type = 'd'
-        self.width = 3
-        self.scale = 100
+        self.width = 4
+        self.scale = 1000
         self.open('/proc/net/udp', '/proc/net/udp6')
 
     def extract(self):
@@ -1636,8 +1636,8 @@ class dstat_unix(dstat):
         self.nick = ('dgm', 'str', 'lis', 'act')
         self.vars = ('datagram', 'stream', 'listen', 'established')
         self.type = 'd'
-        self.width = 3
-        self.scale = 100
+        self.width = 4
+        self.scale = 1000
         self.open('/proc/net/unix')
 
     def extract(self):
